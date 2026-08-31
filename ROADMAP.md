@@ -75,7 +75,7 @@ All 18 above are ⚪ OPEN.
 
 ## Audio digests
 
-- First audio overview deferred to the Monday cron (per Phase 5 protocol).
+- 2026-08-31 (cycle 002 audio): artifact_id `edfbb206-8675-4c30-9a24-25a8af8f76ed` — "How AI Agents Beat Digital Bouncers" — deep_dive, ~6.5 min wall-clock, completed 09:08:09Z.
 
 ## Cross-cycle trends
 
