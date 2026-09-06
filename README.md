@@ -26,6 +26,7 @@ NotebookLM notebook **`Research an AI Agent Can Do For the User`**
 ├── README.md                    this file
 ├── PROTOCOL.md                  the 5-phase cycle, in detail
 ├── ROADMAP.md                   rolling status across cycles
+├── map/                         ICM System-map form: catalog of nouns/verbs/effects (added 2026-09-05)
 ├── distillation/                per-cycle forced-query outputs
 │   └── YYYY-MM-DD.md
 ├── capabilities/                one file per shipped capability
