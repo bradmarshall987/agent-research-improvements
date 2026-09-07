@@ -77,6 +77,10 @@ All 18 above are ⚪ OPEN.
 
 - 2026-08-31 (cycle 002 audio): artifact_id `edfbb206-8675-4c30-9a24-25a8af8f76ed` — "How AI Agents Beat Digital Bouncers" — deep_dive, ~6.5 min wall-clock, completed 09:08:09Z.
 
+## Skipped cycles
+
+- 2026-09-07 (Monday audio digest): SKIPPED — no distillation for 2026-09-06. Latest distillation on disk is `distillation/2026-08-30.md`. Root cause: the 2026-09-06 18:00Z `agent-research-distill` cron ran but aborted at the sidecar health probe (NotebookLM MCP sidecar unreachable at `10.0.3.1:8765`). Re-verified 2026-09-07 09:0xZ — still `Connection refused` (curl rc=7). No `studio_create` call was made; notebook `b9d347f7-62ff-4999-a65d-a0b59d16bf77` untouched.
+
 ## Cross-cycle trends
 
 - 2026-08-30 (cycle 002): first weekly distillation ran cleanly; notebook returned 16 capabilities (4 new beyond seed), all ⚪ OPEN. No SHIP/DEFER/REJECT decisions this cycle (Phase 3 is a Dan action, not a cron action). Hermes-native share of new entries: 2/4 (cap-017, cap-018 are prompt+skill; cap-015, cap-016 need external infra).
