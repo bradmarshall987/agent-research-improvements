@@ -4,12 +4,19 @@ Rolling status across cycles. Updated by the Sunday distillation cron.
 
 ## Current cycle
 
-- **Cycle started**: 2026-08-30 (cycle 002, first weekly distillation)
+- **Cycle started**: 2026-09-13 (cycle 003 — second weekly distillation; the 2026-09-06 cycle was SKIPPED, see "Skipped cycles" below)
 - **Phase**: Distill → (Dan to run Phase 3 Decide)
 - **Notebook**: https://notebooklm.google.com/notebook/b9d347f7-62ff-4999-a65d-a0b59d16bf77
-- **Notebook sources**: 12
+- **Notebook sources**: 12 (unchanged; no new seeds this cycle)
 - **Distillation cadence**: weekly (Sun 18:00 UTC)
-- **Latest distillation**: [`distillation/2026-08-30.md`](distillation/2026-08-30.md)
+- **Latest distillation**: [`distillation/2026-09-13.md`](distillation/2026-09-13.md)
+- **Hermes-native S-only shortlist** (concrete Phase 3 SHIP candidates, no external infra needed):
+  - `cap-009` Publication-ready Markdown report template w/ Limitations + Open Questions
+  - `cap-010` One-page scope card pre-flight gate
+  - `cap-012` Claims verification table (claim / evidence / quote / source / confidence + "no evidence found" rows)
+  - `cap-016` Dynamic search query sequence shuffling
+  - `cap-017` Timestamp-anchored summarization (locator coords on every summary point)
+  - `cap-018` Standardized metadata tagging schema (`method`, `dataset`, `limitation`, `open_question`)
 
 ## Capability seed (14 capabilities from initial brainstorm)
 
@@ -33,11 +40,11 @@ The full seed lives in `synthesis/improvement-roadmap.md`. Status legend:
 
 ### Delivery (2)
 - ⚪ `cap-008` Citation-first answer engine routing — Effort: S
-- ⚪ `cap-009` Publication-ready Markdown report generation — Effort: M
+- ⚪ `cap-009` Publication-ready Markdown report generation (with Limitations + Open Questions sections) — Effort: S (Hermes-native prompt+skill)
 
 ### HITL (3)
 - ⚪ `cap-010` Mandatory scope card before any research run — Effort: S
-- ⚪ `cap-011` Interactive suspend/resume workflow checkpoints — Effort: L (workflow engine)
+- ⚪ `cap-011` Interactive suspend/resume workflow checkpoints — Effort: M (external infra: Mastra vNext orchestrator)
 - ⚪ `cap-012` Automated claims verification table — Effort: S
 
 ### Durability (2)
@@ -51,7 +58,7 @@ Added here as `cap-015` … `cap-018`. All ⚪ OPEN pending Phase 3 decision.
 
 ### Data acquisition (extended)
 - ⚪ `cap-015` Realistic header & behavioral spoofing (rotating UAs, locale match, randomized human-delay generator) — Effort: M (external infra)
-- ⚪ `cap-016` Dynamic query sequence shuffling (randomize bulk keyword order before execution) — Effort: S (external infra)
+- ⚪ `cap-016` Dynamic query sequence shuffling (randomize bulk keyword order before execution) — Effort: S (Hermes-native prompt+skill)
 
 ### Processing (extended)
 - ⚪ `cap-017` Timestamp-anchored summarization (force extraction of source locator coordinates — timestamps / page numbers — in summaries) — Effort: S (Hermes-native prompt+skill)
@@ -84,4 +91,5 @@ All 18 above are ⚪ OPEN.
 ## Cross-cycle trends
 
 - 2026-08-30 (cycle 002): first weekly distillation ran cleanly; notebook returned 16 capabilities (4 new beyond seed), all ⚪ OPEN. No SHIP/DEFER/REJECT decisions this cycle (Phase 3 is a Dan action, not a cron action). Hermes-native share of new entries: 2/4 (cap-017, cap-018 are prompt+skill; cap-015, cap-016 need external infra).
+- 2026-09-13 (cycle 003): second weekly distillation after a one-cycle skip (sidecar offline 2026-09-06). Notebook returned 18 capabilities — same universe as cycle 002, with **cleaner tags** (cycle 002 had ambiguous Hermes-native fit on cap-005, cap-008, cap-011, cap-013, cap-014; cycle 003 locked them all to "Needs external infra" or "Hermes-native (Prompt/Skill)"). **No new capabilities surfaced** because no new sources were seeded this cycle. The big unlock this cycle is the **Hermes-native S-only shortlist** (6 caps ready to SHIP as prompt+skill with zero external infra): cap-009, cap-010, cap-012, cap-016, cap-017, cap-018. Phase 3 Decide target for next session: pick at least one off the shortlist to exercise Phase 4 Build. Total capability count across both cycles: 18 unique.
 - (First quarterly review: 2026-11-29)
