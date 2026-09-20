@@ -4,12 +4,12 @@ Rolling status across cycles. Updated by the Sunday distillation cron.
 
 ## Current cycle
 
-- **Cycle started**: 2026-09-13 (cycle 003 — second weekly distillation; the 2026-09-06 cycle was SKIPPED, see "Skipped cycles" below)
+- **Cycle started**: 2026-09-20 (cycle 004 — third weekly distillation)
 - **Phase**: Distill → (Dan to run Phase 3 Decide)
 - **Notebook**: https://notebooklm.google.com/notebook/b9d347f7-62ff-4999-a65d-a0b59d16bf77
-- **Notebook sources**: 12 (unchanged; no new seeds this cycle)
+- **Notebook sources**: 12 (unchanged from cycle 003; no new Phase 1 seeds this week)
 - **Distillation cadence**: weekly (Sun 18:00 UTC)
-- **Latest distillation**: [`distillation/2026-09-13.md`](distillation/2026-09-13.md)
+- **Latest distillation**: [`distillation/2026-09-20.md`](distillation/2026-09-20.md)
 - **Hermes-native S-only shortlist** (concrete Phase 3 SHIP candidates, no external infra needed):
   - `cap-009` Publication-ready Markdown report template w/ Limitations + Open Questions
   - `cap-010` One-page scope card pre-flight gate
@@ -70,7 +70,7 @@ Added here as `cap-015` … `cap-018`. All ⚪ OPEN pending Phase 3 decision.
 
 ## Open capabilities (need SHIP/DEFER/REJECT decision)
 
-All 18 above are ⚪ OPEN.
+All 18 above are ⚪ OPEN. No Phase 3 dispositions have been made by Dan in any cycle to date (cycles 002, 003, 004). Cron-only cycles — the Phase 3 Decide step is a Dan action.
 
 ## Deferred
 
@@ -93,4 +93,5 @@ All 18 above are ⚪ OPEN.
 
 - 2026-08-30 (cycle 002): first weekly distillation ran cleanly; notebook returned 16 capabilities (4 new beyond seed), all ⚪ OPEN. No SHIP/DEFER/REJECT decisions this cycle (Phase 3 is a Dan action, not a cron action). Hermes-native share of new entries: 2/4 (cap-017, cap-018 are prompt+skill; cap-015, cap-016 need external infra).
 - 2026-09-13 (cycle 003): second weekly distillation after a one-cycle skip (sidecar offline 2026-09-06). Notebook returned 18 capabilities — same universe as cycle 002, with **cleaner tags** (cycle 002 had ambiguous Hermes-native fit on cap-005, cap-008, cap-011, cap-013, cap-014; cycle 003 locked them all to "Needs external infra" or "Hermes-native (Prompt/Skill)"). **No new capabilities surfaced** because no new sources were seeded this cycle. The big unlock this cycle is the **Hermes-native S-only shortlist** (6 caps ready to SHIP as prompt+skill with zero external infra): cap-009, cap-010, cap-012, cap-016, cap-017, cap-018. Phase 3 Decide target for next session: pick at least one off the shortlist to exercise Phase 4 Build. Total capability count across both cycles: 18 unique.
+- 2026-09-20 (cycle 004): third weekly distillation — universe still 18 capabilities, **no new sources seeded this cycle so no new entries and no retired entries**. Cycle 004's verbatim answer surfaces the same 18 caps as cycle 003 with cleaner citations on cap-009 (Timestamp & Page-Anchored Summarization, locator-coords rule) and cap-018 (Metadata Tagging Schema, full taxonomy `method`/`dataset`/`limitation`/`open_question`/`assumption`/`decision` expanded from cycle 003's 4-tag list). **All 18 remain ⚪ OPEN** — Phase 3 Decide has not been exercised by Dan in any of the 3 cycles to date. The `capabilities/` directory still doesn't exist; first Phase 4 build is blocked on a Phase 3 SHIP. Recommended SHIP for next session (small judgment call, see distillation "Suggested next action"): `cap-009` Publication-Ready Markdown Reports — S effort, Hermes-native, addresses the overconfidence pattern that recurs across cap-013/015/018. Total cycle count: 3 (002, 003, 004), 18 unique capabilities, 0 SHIPPED, 0 DEFERRED, 0 REJECTED.
 - (First quarterly review: 2026-11-29)
