@@ -84,6 +84,7 @@ All 18 above are ⚪ OPEN. No Phase 3 dispositions have been made by Dan in any 
 
 - 2026-08-31 (cycle 002 audio): artifact_id `edfbb206-8675-4c30-9a24-25a8af8f76ed` — "How AI Agents Beat Digital Bouncers" — deep_dive, ~6.5 min wall-clock, completed 09:08:09Z.
 - 2026-09-14 (cycle 003 audio): artifact_id `6f9a451e-7a23-4e19-8be0-da7c1619e2f8` — "AI agents versus the web blockade" — deep_dive, ~5.5 min wall-clock, completed 09:06:31Z.
+- 2026-09-21 (cycle 004 audio): artifact_id `3a1a1b62-f60a-4394-a867-b188c86f7eba` — "How AI Agents Beat Anti-Bot Systems" — deep_dive, ~5.1 min wall-clock, completed 09:06:26Z.
 
 ## Skipped cycles
 
