@@ -17,3 +17,6 @@ __pycache__/
 
 # Don't commit audio artifacts — link them by id only
 distillation/audio/
+
+# Local cron scratch (extraction scripts, intermediate files)
+.cron/
