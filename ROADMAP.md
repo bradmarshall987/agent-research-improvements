@@ -90,6 +90,7 @@ All 18 above are ⚪ OPEN. No Phase 3 dispositions have been made by Dan in any 
 ## Skipped cycles
 
 - 2026-09-07 (Monday audio digest): SKIPPED — no distillation for 2026-09-06. Latest distillation on disk is `distillation/2026-08-30.md`. Root cause: the 2026-09-06 18:00Z `agent-research-distill` cron ran but aborted at the sidecar health probe (NotebookLM MCP sidecar unreachable at `10.0.3.1:8765`). Re-verified 2026-09-07 09:0xZ — still `Connection refused` (curl rc=7). No `studio_create` call was made; notebook `b9d347f7-62ff-4999-a65d-a0b59d16bf77` untouched.
+- 2026-10-12 (Monday audio digest): SKIPPED — no distillation for 2026-10-11; latest distillation on disk is `distillation/2026-10-04.md`. No `studio_create` call was made; notebook `b9d347f7-62ff-4999-a65d-a0b59d16bf77` untouched.
 
 ## Cross-cycle trends
 
