@@ -4,20 +4,15 @@ Rolling status across cycles. Updated by the Sunday distillation cron.
 
 ## Current cycle
 
-- **Cycle started**: 2026-10-25 (cycle 008 — eighth weekly distillation; cycle 007 skipped due to NotebookLM auth expiry, recovered via Dan-side `nlm login` before this cycle)
-- **Phase**: Distill complete — see [`distillation/2026-10-25.md`](distillation/2026-10-25.md)
+- **Cycle started**: 2026-11-09 UTC (cycle 009; executed Monday after the missed Sunday run)
+- **Phase**: Distill complete; Phase 3 decisions remain pending.
 - **Notebook**: https://notebooklm.google.com/notebook/b9d347f7-62ff-4999-a65d-a0b59d16bf77
-- **Notebook sources**: 12 (unchanged from cycles 002 → 007; no new Phase 1 seeds in 7 cycles)
+- **Notebook sources**: 12, unchanged in count from cycle 008; this query reports using 10. An unchanged count alone does not prove source content is unchanged.
 - **Distillation cadence**: weekly (Sun 18:00 UTC)
-- **Latest distillation**: [`distillation/2026-10-25.md`](distillation/2026-10-25.md)
-- **Cycle 008 only meaningful delta**: `cap-006` Tiered Ingestion Caching Architecture flipped from **Hermes-native** (cycles 003 → 006) to **Needs external infra** (cycle 008, citing "requires setting up structured local cache directories and file storage on the hosting server"). Effort unchanged at S. Flag for Phase 3: confirm disposition.
-- **Hermes-native S-only shortlist** (concrete Phase 3 SHIP candidates, no external infra needed — cap-006 dropped per cycle 008 flip):
-  - `cap-009` Publication-ready Markdown report template w/ Limitations + Open Questions
-  - `cap-010` One-page scope card pre-flight gate
-  - `cap-012` Claims verification table (claim / evidence / quote / source / confidence + "no evidence found" rows)
-  - `cap-016` Dynamic search query sequence shuffling
-  - `cap-017` Timestamp-anchored summarization (locator coords on every summary point)
-  - `cap-018` Standardized metadata tagging schema (`method`, `dataset`, `limitation`, `open_question`)
+- **Latest distillation**: [`distillation/2026-11-09.md`](distillation/2026-11-09.md) — the full NotebookLM answer, saved verbatim.
+- **Cycle outcome**: the answer enumerates 23 items; deduplication against the existing 18 capabilities identifies six newly surfaced, distinct candidates (`cap-019`–`cap-024`). These are newly surfaced from the existing corpus, not evidence of new source additions. All 24 remain open pending Phase 3 decisions.
+- **Classification cautions**: NotebookLM now calls local tiered caching (`cap-006`) prompt/skill-based, reversing its cycle 008 external-infrastructure label. This is an unverified estimate, not evidence of an implementation or a disposition. Likewise, API integrations still depend on external providers even when the answer calls them prompt/skill changes; multiformat generation and immutable audit claims need implementation checks.
+- **Hermes-native S-sized candidates to investigate**: `cap-009`, `cap-010`, `cap-012`, `cap-016`, `cap-017`, `cap-018`, and `cap-019`–`cap-021`; the NotebookLM fit labels are estimates, not deployment verification.
 
 ## Capability seed (14 capabilities from initial brainstorm)
 
@@ -67,11 +62,47 @@ Added here as `cap-015` … `cap-018`. All ⚪ OPEN pending Phase 3 decision.
 
 ## Shipped this cycle
 
-(none — Phase 3 Decide has not run in any cycle to date; 4 cron cycles of distillations have all ended at Phase 2)
+None. The repository records no SHIP decisions or completed capability files; the GitHub issue/PR list was also empty when checked. Existing Hermes features may overlap candidates but have not been established as completed Phase 4 builds for this roadmap.
 
 ## Open capabilities (need SHIP/DEFER/REJECT decision)
 
-All 18 above are ⚪ OPEN. No Phase 3 dispositions have been made by Dan in any cycle to date (cycles 002, 003, 004, 005). Cron-only cycles — the Phase 3 Decide step is a Dan action.
+### Previously open — status checked this cycle
+
+All 18 pre-existing entries are **STILL OPEN**; no new SHIP, DEFER, or REJECT disposition is recorded.
+
+- **STILL OPEN** `cap-001` — Dual-engine SERP + reader pipeline.
+- **STILL OPEN** `cap-002` — Multi-provider search fallback stack.
+- **STILL OPEN** `cap-003` — Cloud antidetect browser integration.
+- **STILL OPEN** `cap-004` — Residential proxy + humanized scraper.
+- **STILL OPEN** `cap-005` — Autonomous memory folding.
+- **STILL OPEN** `cap-006` — Separate search and URL caches; native/external classification requires verification.
+- **STILL OPEN** `cap-007` — Unified reasoning + visual QA model.
+- **STILL OPEN** `cap-008` — Citation-first answer engine routing.
+- **STILL OPEN** `cap-009` — Publication-ready Markdown reports, limitations and open questions.
+- **STILL OPEN** `cap-010` — Research scope card.
+- **STILL OPEN** `cap-011` — Interactive suspend/resume checkpoints.
+- **STILL OPEN** `cap-012` — Claims verification table and evidence triangulation.
+- **STILL OPEN** `cap-013` — Persistent project workspaces.
+- **STILL OPEN** `cap-014` — Shadow-agent note CRUD.
+- **STILL OPEN** `cap-015` — Realistic headers and behavioral spoofing; overlaps `cap-004`.
+- **STILL OPEN** `cap-016` — Search query sequence shuffling.
+- **STILL OPEN** `cap-017` — Timestamp/page-anchored summaries and fine-grained provenance.
+- **STILL OPEN** `cap-018` — Standardized research metadata tags.
+
+### Newly surfaced in cycle 009
+
+Each entry is **OPEN**, not an authorization to build. Effort and fit are NotebookLM estimates to verify, not tested implementation facts. Source titles and detailed proposals are in the [verbatim cycle 009 answer](distillation/2026-11-09.md).
+
+- **OPEN `cap-019` — Counterargument and edge-case pressure testing**: prompt a strongest opposing case and test edge cases; uses the triangulation already in `cap-012`. Processing; S; proposed prompt/skill. Source: *How AI Agents Will Change Research: A Human-in-the-Loop Workflow Playbook*.
+- **OPEN `cap-020` — Search-result relevance evaluation and learning extraction**: score relevance against the goal, extract learnings and suggest follow-up questions. Processing; S; proposed prompt/skill, integration to verify. Source: *GitHub - mastra-ai/template-deep-research*.
+- **OPEN `cap-021` — Two-person evidence verification and decision sign-off**: separate verifier and approver, with verification notes and unresolved uncertainties. HITL; S for a template/workflow, but requires two available human roles. Source: *How AI Agents Will Change Research: A Human-in-the-Loop Workflow Playbook*.
+- **OPEN `cap-022` — Multiformat grounded deliverables**: turn checked research into formats beyond `cap-009` Markdown reports, such as audio, HTML slides and mind maps. Delivery; M; NotebookLM suggests skill orchestration, but actual artifact tooling and external services need verification. Sources: *GitHub - mastra-ai/template-deep-research*; *How AI Agents Will Change Research: A Human-in-the-Loop Workflow Playbook*.
+- **OPEN `cap-023` — Cross-file grounded knowledge-base Q&A**: retrieve evidence across saved transcripts, PDFs and notes to answer questions and trace decisions. Durability; S estimated; proposed retrieval/skill change, semantic indexing needs verification. Source: *How AI Agents Will Change Research: A Human-in-the-Loop Workflow Playbook*.
+- **OPEN `cap-024` — Research reproducibility and audit metadata**: log inputs, prompts, models/tools, timestamps, assumptions and reviewer identity. Durability; S for a metadata template; a generated text block alone is **not** immutable or tamper-evident, so immutable storage would require separate design. Source: *How AI Agents Will Change Research: A Human-in-the-Loop Workflow Playbook*.
+
+### Cycle 009 deduplication crosswalk
+
+The answer's 23 numbered proposals are not 23 new capabilities. Overlaps are treated as existing scopes, not proof that every detail is implemented: 1→`cap-001`/`cap-002`; 2→`cap-002` (Exa semantic search is in the original seed); 3→`cap-008`; 4→`cap-002` (Google-specific SERP features); 5→`cap-002`; 6→`cap-001`; 7→`cap-004`/`cap-015`; 8→`cap-003`; 9→`cap-006`; 10→`cap-005`; 11→`cap-007`; 12→`cap-012`; 13→`cap-019`; 14→`cap-020`; 15→`cap-011`; 16→`cap-010`; 17→`cap-021`; 18→`cap-022` (overlaps `cap-009` for Markdown); 19→`cap-009`; 20→`cap-017`; 21→`cap-013`/`cap-014`/`cap-018`; 22→`cap-023`; 23→`cap-024`. `cap-016` did not appear as a separate item but remains open. Other omitted existing candidates also remain open; the query is not a decision or proof of completeness.
 
 ## Deferred
 
@@ -101,6 +132,8 @@ All 18 above are ⚪ OPEN. No Phase 3 dispositions have been made by Dan in any 
 
 ## Cross-cycle trends
 
+Historical entries below are preserved as written, but contain inconsistent totals and contradictory `cap-006` classifications; current status is the cycle 009 inventory above, not those historical counts.
+
 - 2026-08-30 (cycle 002): first weekly distillation ran cleanly; notebook returned 16 capabilities (4 new beyond seed), all ⚪ OPEN. No SHIP/DEFER/REJECT decisions this cycle (Phase 3 is a Dan action, not a cron action). Hermes-native share of new entries: 2/4 (cap-017, cap-018 are prompt+skill; cap-015, cap-016 need external infra).
 - 2026-09-13 (cycle 003): second weekly distillation after a one-cycle skip (sidecar offline 2026-09-06). Notebook returned 18 capabilities — same universe as cycle 002, with **cleaner tags** (cycle 002 had ambiguous Hermes-native fit on cap-005, cap-008, cap-011, cap-013, cap-014; cycle 003 locked them all to "Needs external infra" or "Hermes-native (Prompt/Skill)"). **No new capabilities surfaced** because no new sources were seeded this cycle. The big unlock this cycle is the **Hermes-native S-only shortlist** (6 caps ready to SHIP as prompt+skill with zero external infra): cap-009, cap-010, cap-012, cap-016, cap-017, cap-018. Phase 3 Decide target for next session: pick at least one off the shortlist to exercise Phase 4 Build. Total capability count across both cycles: 18 unique.
 - 2026-09-20 (cycle 004): third weekly distillation — universe still 18 capabilities, **no new sources seeded this cycle so no new entries and no retired entries**. Cycle 004's verbatim answer surfaces the same 18 caps as cycle 003 with cleaner citations on cap-009 (Timestamp & Page-Anchored Summarization, locator-coords rule) and cap-018 (Metadata Tagging Schema, full taxonomy `method`/`dataset`/`limitation`/`open_question`/`assumption`/`decision` expanded from cycle 003's 4-tag list). **All 18 remain ⚪ OPEN** — Phase 3 Decide has not been exercised by Dan in any of the 3 cycles to date. The `capabilities/` directory still doesn't exist; first Phase 4 build is blocked on a Phase 3 SHIP. Recommended SHIP for next session (small judgment call, see distillation "Suggested next action"): `cap-009` Publication-Ready Markdown Reports — S effort, Hermes-native, addresses the overconfidence pattern that recurs across cap-013/015/018. Total cycle count: 3 (002, 003, 004), 18 unique capabilities, 0 SHIPPED, 0 DEFERRED, 0 REJECTED.
@@ -108,5 +141,6 @@ All 18 above are ⚪ OPEN. No Phase 3 dispositions have been made by Dan in any 
 - 2026-10-04 (cycle 006): fifth weekly distillation — universe still stable (17 caps in the cycles-003+ numbering, 18 in the cycle-002 ROADMAP seed; same gap that's been there since cycle 003). **Still no new sources seeded (5 cycles in a row without a Phase 1 seed)**. Cycle 006 verbatim text is functionally identical to cycle 005; only the rendering of two bullets differs (cycle 006 separates Description from Hermes-Native Fit per the raw NotebookLM response; cycle 005 collapsed them — same capabilities). No new entries, no retired entries, no Hermes-native-vs-external-infra reassignments, no effort reclassifications. **All 17 remain ⚪ OPEN**; the Phase 3 Decide step is still untouched. The cycle-006 distillation explicitly flags this as a **second identical Suggested Next Action** across cycles 004 → 006 — the meta-finding from cycle 005 (cron is functioning, process is stalled on the human step) is now a structural pattern, not a one-off. The "Recommended SHIP for next session" target (cap-009 Publication-Ready Markdown Reports) has been carried forward 3 cycles in a row without action. Either Phase 1 (add a new source) or Phase 3 (Dan runs Phase 3 Decide) needs to break the loop. Total cycle count: 5 (002, 003, 004, 005, 006), 17 unique capabilities surfaced across cycles 003+, 0 SHIPPED, 0 DEFERRED, 0 REJECTED.
 - 2026-10-23 (cycle 007 attempted, SKIPPED): sixth weekly distillation aborted at the `notebook_query` step — **different failure mode from prior skips**: NotebookLM MCP sidecar IS online (server_info returns v0.15.6, all 53 tools visible), but cached Google auth for profile `d7319798@gmail.com` is **expired** (`auth_status: stale` from `server_info`; `refresh_auth` reports `Headless browser refresh failed (OSError)`). No `distillation/2026-10-23.md` written. No new sources seeded (still 6 cycles in a row without a Phase 1 seed). No Phase 3 movement. Capabilities universe still 17 unique across cycles 003+, 0 SHIPPED, 0 DEFERRED, 0 REJECTED. **Action item for Dan**: run `nlm login` on the laptop to refresh the cached Google auth tokens — once that's done, the Sunday cron will resume the cycle-007 distillation automatically on the next scheduled run. **Resolved before cycle 008**: cycle 008's `server_info` returns `auth_status: configured`, confirming Dan ran `nlm login` between 2026-10-23 and 2026-10-25; the cron resumed cleanly with no code-side changes. Total cycle count: 6 attempted (002, 003, 004, 005, 006, 007-skipped), 17 unique capabilities, 0 SHIPPED, 0 DEFERRED, 0 REJECTED.
 - 2026-10-25 (cycle 008): seventh successful weekly distillation (21 days after cycle 006; first successful run since the cycle 007 auth skip). **Universe stable at 17 capabilities** (same as cycles 003 → 006). **One meaningful delta**: `cap-006` Tiered Ingestion Caching Architecture flipped from **Hermes-native** (cycles 003 → 006) to **Needs external infra** (cycle 008, citing "structured local cache directories and file storage on the hosting server"); effort unchanged at S. Net effect: the Hermes-native S-only shortlist drops to **5** items (cap-009, cap-010, cap-012, cap-016, cap-017, cap-018 — minus cap-006). Phase 3 disposition needed on cap-006's flip. **All 17 still ⚪ OPEN** — Phase 3 Decide has not been exercised by Dan in any of the 8 cycles to date (002 → 008). No new sources seeded (now 7 cycles in a row without a Phase 1 seed). Cycle 008 verbatim is functionally identical to cycle 006; the only cycle-to-cycle delta is the cap-006 flip plus minor citation-bracket renumbering. The "Suggested next action" section is now word-for-word identical across 4 cycles (005 → 008) and the structural deadlock pattern (cron functioning, process stalled on the human step) is now entrenched enough to count as a quarterly-review-worthy finding. Recommended SHIP target unchanged: `cap-009` Publication-Ready Markdown Reports (or `cap-010` One-Page Scope Card as alternative). Total cycle count: 7 successful (002, 003, 004, 005, 006, 008) + 1 skip (007), 17 unique capabilities surfaced across cycles 003+, 0 SHIPPED, 0 DEFERRED, 0 REJECTED.
+- 2026-11-09 (cycle 009): 23 proposals deduplicated into six newly surfaced open candidates (`cap-019`–`cap-024`); 18 existing remain open; none shipped or deferred; source count remains 12 and `cap-006` fit flipped back to prompt/skill in the query.
 - (First quarterly review: 2026-11-29)
 2026-10-04 (cycle 006 audio): artifact_id  — "Research an AI Agent Can Do For the User" — deep_dive, ~6.5 min wall-clock, completed 09:01:58Z
